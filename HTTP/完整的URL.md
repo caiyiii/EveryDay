@@ -44,3 +44,7 @@
 2. 服务端发送报文，ACK、SEQ，表示同意关闭请求。（服务端》客户端，你的请求报文接收完了，我准备关闭了，你也准备吧）进入FIN_WAIT_2 状态；
 3. 服务端发送报文，FIN、ACK、SEQ，请求关闭连接。（服务端》客户端，我的响应报文发送完了，你可以准备关闭了）进入LAST_ACK 状态；
 4. 客户端发送报文，ACK、SEQ。（客户端》服务端，你的响应报文接收完了，我准备关闭了）进入TIME_WAIT 状态。等待一定时间未收到回复，则正常关闭。
+
+[掘金](https://juejin.cn/post/6943486084407885831)
+[CSDN](https://blog.csdn.net/cyfhshusri/article/details/115209558)
+[简书](https://www.jianshu.com/p/395ad4611976)
