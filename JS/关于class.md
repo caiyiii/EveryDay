@@ -31,7 +31,7 @@
   console.log(boo.#prop) // Private field '#prop' must be declared in an enclosing class
 ```
 > 类FOO 相当于实例boo 的原型，所有在类中定义的方法，都会被实例继承。
-如果在一个方法fooFn() 或者属性myProp 前加上关键字static，就表示该方法不会被
-实例继承，而是直接通过类来调用 Foo.myProp Foo.fooFn() 这就称为静态方法和属性
-注意！！ 如果静态方法包含this 关键字，这个this 指的是类Foo 而不是实例boo
-  实例属性还可以定义在类的最顶层 或者constructor 中
+>如果在一个方法fooFn() 或者属性myProp 前加上关键字static，就表示该方法不会被
+>实例继承，而是直接通过类来调用 Foo.myProp Foo.fooFn() 这就称为静态方法和属性
+>注意！！ 如果静态方法包含this 关键字，这个this 指的是类Foo 而不是实例boo
+ > 实例属性还可以定义在类的最顶层 或者constructor 中
