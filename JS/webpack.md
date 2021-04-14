@@ -62,4 +62,66 @@
 - 运行
 `webpack`
 
+### 2. 配置热更新
+- `npm install webpack-dev-server --save-dev`
+- 在`config`中添加配置
+```
+  module.exports = {
+    .....
+    devServer: {
+      historyApiFallback: true,
+      hot: true,
+      inline: true,
+      progress: true
+    },
+    .....
+  }
+```
+- 在`package.json`中添加脚本命令
+```
+  .....
+  "scripts": {
+    "dev": "webpack-dev-server --hot --inline"
+  },
+  .....
+```
+- 运行`npm run dev` 实现热更新
+### 3. 添加loader
+> webpack本身只能识别js文件，对于非js文件，就需要loader转换为js文件。`loader`就是资源转换器。
+- 安装loader`npm install css-loader style-loader sass-loader --save-dev`
+- 在`config.js`文件中配置loader
+```
+  module.exports = {
+    .....
+    module: {
+      loaders: [
+        {
+          test: /\.scss$/,
+          loaders: ['style', 'css', 'scss'],
+          include: APP_PATH
+        }
+      ]
+    }
+    .....
+  }
+```
+### 4. 添加Babel
+- 安装 `npm install babel-loader babel-preset-es2015 --save-dev`
+- 配置`config.js`文件
+```
+  module: {
+    loaders: [
+      .....
+      {
+        test: /\.js?$/,
+        loader: 'babel',
+        include: APP_PATH,
+        query: {
+          presets: ['es2015']
+        }
+      }
+      .....
+    ]
+  }
+```
 持续更新。。。。
