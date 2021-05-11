@@ -67,3 +67,38 @@
 ```
 
 #### 3. `For/of`循环
+> 讲到`For/of`循环，就不得不介绍`For/in`循环。`For/of`循环只循环集合本身的元素，`For/in`循环遍历的实际上是对象的属性名称，`Array`实际也是一个对象，它的每个元素索引被视为一个属性，因此在使用`For/in`循环遍历数组时会将数组的所有属性遍历出来却不包括`length`属性
+```
+  var arr = ['a', 'b', 'c'];
+  arr.fourth = 'd';
+  for (var i in arr) {
+    console.log(i); // '0', '1', '2', 'fourth'
+  }
+
+  for (var i of arr) {
+    console.log(i); // 'a', 'b', 'c'
+  }
+```
+> 数组`Array`具有下标，可以通过下标循环遍历集合本身元素，但是`Map`和`Set`这类集合就无法使用下标，因此`Es6`标准引入了新的类型`iterable`类型，`Array Map Set`都属于`iterable`类型，可通过`For/of`循环遍历集合。ps: 亦可通过`iterable`内置方法`forEach`遍历(这是ES5.1标准引入的)
+
+#### 4. `class`关键字
+> [关于`class`](https://juejin.cn/post/6945257821986357261)
+
+#### 5. `Promise`
+#### ***I Promise a Result!!!***
+#### `Promise`对象支持两个属性：`state`和`result`
+- 当`Promise`对象处于`pending`状态时，结果是`undefined`。
+- 当`Promise`对象处于`fulfilled`状态时，结果是一个值。
+- 当`Promise`对象处于`rejected`状态时，结果是一个`error`对象。
+```
+  // Example
+  let myPromise = new Promise(function(resolve, reject) {
+    setTimeout(function() {
+      resolve('hello world!')
+    }, 3000)
+  })
+
+  myPromise.then(function(val) {
+    alert(val)
+  })
+```
